@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="5" hostname="DESKTOP-FVKO3N4" name="DAO.PassbookDAOTest" skipped="0" tests="6" time="2.949" timestamp="2023-04-25T12:48:50">
+<testsuite errors="0" failures="4" hostname="DESKTOP-FVKO3N4" name="DAO.PassbookDAOTest" skipped="0" tests="8" time="1.886" timestamp="2023-04-25T16:32:57">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="GB" />
@@ -44,7 +44,7 @@
     <property name="libs.testng.src" value="" />
     <property name="libs.spring-webmvc3.0.src" value="" />
     <property name="libs.restapi.classpath" value="C:\Program Files (x86)\NetBeans-17\netbeans\enterprise\modules\ext\jaxrs-2.1\jakarta.ws.rs-api-2.1.6.jar" />
-    <property name="runmain.jvmargs" value=" -javaagent:&quot;C:\Users\admin\AppData\Roaming\NetBeans\17\modules\ext\jacocoagent.jar&quot;=includes=controller.*:dao.*:model.*:utilities.*,destfile=&quot;C:\Users\admin\Documents\NetBeansProjects\BankManagement\jacoco.exec-979933739059000&quot;" />
+    <property name="runmain.jvmargs" value=" -javaagent:&quot;C:\Users\admin\AppData\Roaming\NetBeans\17\modules\ext\jacocoagent.jar&quot;=includes=controller.*:dao.*:model.*:utilities.*,destfile=&quot;C:\Users\admin\Documents\NetBeansProjects\BankManagement\jacoco.exec-993387314219800&quot;" />
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
     <property name="libs.jaxb.maven-pom" value="" />
     <property name="os.arch" value="x86" />
@@ -55,7 +55,7 @@
     <property name="libs.spring-webmvc5.0.javadoc" value="" />
     <property name="libs.spring-framework500.classpath" value="C:\Program Files (x86)\NetBeans-17\netbeans\platform\modules\org-apache-commons-logging.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\cglib-2.2.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-aop-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-aspects-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-beans-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-context-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-context-indexer-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-context-support-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-core-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-expression-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-instrument-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-jcl-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-jdbc-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-jms-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-messaging-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-orm-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-oxm-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-test-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-tx-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-web-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-webflux-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-webmvc-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-websocket-5.2.9.RELEASE.jar" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner DAO.PassbookDAOTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\admin\Documents\NetBeansProjects\BankManagement\build\test\results\TEST-DAO.PassbookDAOTest.xml crashfile=C:\Users\admin\Documents\NetBeansProjects\BankManagement\build\junitvmwatcher3928334890869727438.properties propsfile=C:\Users\admin\Documents\NetBeansProjects\BankManagement\build\junit3060005805168858888.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner DAO.PassbookDAOTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\admin\Documents\NetBeansProjects\BankManagement\build\test\results\TEST-DAO.PassbookDAOTest.xml crashfile=C:\Users\admin\Documents\NetBeansProjects\BankManagement\build\junitvmwatcher7032853517112062022.properties propsfile=C:\Users\admin\Documents\NetBeansProjects\BankManagement\build\junit8660677244363366080.properties" />
     <property name="build.classes.dir" value="build/web/WEB-INF/classes" />
     <property name="ap.supported.internal" value="true" />
     <property name="libs.javaee-api-8.0.maven-pom" value="" />
@@ -414,30 +414,28 @@
     <property name="war.ear.name" value="BankManagement.war" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files (x86)\NetBeans-17\netbeans\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="DAO.PassbookDAOTest" name="testGetPassbooksOfAccount" time="2.751" />
-  <testcase classname="DAO.PassbookDAOTest" name="testCreate1" time="0.033">
-    <failure message="expected:&lt;1&gt; but was:&lt;0&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;1&gt; but was:&lt;0&gt;
-	at DAO.PassbookDAOTest.testCreate1(PassbookDAOTest.java:62)
+  <testcase classname="DAO.PassbookDAOTest" name="testSettlementPassbook" time="1.711" />
+  <testcase classname="DAO.PassbookDAOTest" name="testGetPassbooksOfAccount" time="0.004" />
+  <testcase classname="DAO.PassbookDAOTest" name="testSettlementPassbook2" time="0.025">
+    <failure type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError
+	at DAO.PassbookDAOTest.testSettlementPassbook2(PassbookDAOTest.java:205)
 </failure>
   </testcase>
-  <testcase classname="DAO.PassbookDAOTest" name="testCreate2" time="0.008">
+  <testcase classname="DAO.PassbookDAOTest" name="testCreate1" time="0.018" />
+  <testcase classname="DAO.PassbookDAOTest" name="testCreate2" time="0.012">
     <failure message="expected:&lt;false&gt; but was:&lt;true&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;false&gt; but was:&lt;true&gt;
-	at DAO.PassbookDAOTest.testCreate2(PassbookDAOTest.java:86)
+	at DAO.PassbookDAOTest.testCreate2(PassbookDAOTest.java:91)
 </failure>
   </testcase>
-  <testcase classname="DAO.PassbookDAOTest" name="testCreate3" time="0.014">
+  <testcase classname="DAO.PassbookDAOTest" name="testCreate3" time="0.013">
     <failure message="expected:&lt;false&gt; but was:&lt;true&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;false&gt; but was:&lt;true&gt;
-	at DAO.PassbookDAOTest.testCreate3(PassbookDAOTest.java:111)
+	at DAO.PassbookDAOTest.testCreate3(PassbookDAOTest.java:116)
 </failure>
   </testcase>
-  <testcase classname="DAO.PassbookDAOTest" name="testCreate4" time="0.008">
-    <failure message="expected:&lt;false&gt; but was:&lt;true&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;false&gt; but was:&lt;true&gt;
-	at DAO.PassbookDAOTest.testCreate4(PassbookDAOTest.java:134)
-</failure>
-  </testcase>
-  <testcase classname="DAO.PassbookDAOTest" name="testCreate5" time="0.012">
-    <failure message="expected:&lt;1&gt; but was:&lt;0&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;1&gt; but was:&lt;0&gt;
-	at DAO.PassbookDAOTest.testCreate5(PassbookDAOTest.java:159)
+  <testcase classname="DAO.PassbookDAOTest" name="testCreate4" time="0.007" />
+  <testcase classname="DAO.PassbookDAOTest" name="testCreate5" time="0.027">
+    <failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;true&gt; but was:&lt;false&gt;
+	at DAO.PassbookDAOTest.testCreate5(PassbookDAOTest.java:162)
 </failure>
   </testcase>
   <system-out><![CDATA[]]></system-out>

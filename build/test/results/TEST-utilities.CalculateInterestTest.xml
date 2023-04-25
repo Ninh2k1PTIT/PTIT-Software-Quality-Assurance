@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="DESKTOP-FVKO3N4" name="utilities.CalculateInterestTest" skipped="0" tests="4" time="4.128" timestamp="2023-04-25T12:49:00">
+<testsuite errors="0" failures="0" hostname="DESKTOP-FVKO3N4" name="utilities.CalculateInterestTest" skipped="0" tests="4" time="1.739" timestamp="2023-04-25T16:33:02">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="GB" />
@@ -44,7 +44,7 @@
     <property name="libs.testng.src" value="" />
     <property name="libs.spring-webmvc3.0.src" value="" />
     <property name="libs.restapi.classpath" value="C:\Program Files (x86)\NetBeans-17\netbeans\enterprise\modules\ext\jaxrs-2.1\jakarta.ws.rs-api-2.1.6.jar" />
-    <property name="runmain.jvmargs" value=" -javaagent:&quot;C:\Users\admin\AppData\Roaming\NetBeans\17\modules\ext\jacocoagent.jar&quot;=includes=controller.*:dao.*:model.*:utilities.*,destfile=&quot;C:\Users\admin\Documents\NetBeansProjects\BankManagement\jacoco.exec-979933739059000&quot;" />
+    <property name="runmain.jvmargs" value=" -javaagent:&quot;C:\Users\admin\AppData\Roaming\NetBeans\17\modules\ext\jacocoagent.jar&quot;=includes=controller.*:dao.*:model.*:utilities.*,destfile=&quot;C:\Users\admin\Documents\NetBeansProjects\BankManagement\jacoco.exec-993387314219800&quot;" />
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
     <property name="libs.jaxb.maven-pom" value="" />
     <property name="os.arch" value="x86" />
@@ -55,7 +55,7 @@
     <property name="libs.spring-webmvc5.0.javadoc" value="" />
     <property name="libs.spring-framework500.classpath" value="C:\Program Files (x86)\NetBeans-17\netbeans\platform\modules\org-apache-commons-logging.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\cglib-2.2.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-aop-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-aspects-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-beans-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-context-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-context-indexer-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-context-support-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-core-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-expression-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-instrument-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-jcl-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-jdbc-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-jms-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-messaging-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-orm-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-oxm-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-test-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-tx-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-web-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-webflux-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-webmvc-5.2.9.RELEASE.jar;C:\Program Files (x86)\NetBeans-17\netbeans\java\modules\ext\spring-5\spring-websocket-5.2.9.RELEASE.jar" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner utilities.CalculateInterestTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\admin\Documents\NetBeansProjects\BankManagement\build\test\results\TEST-utilities.CalculateInterestTest.xml crashfile=C:\Users\admin\Documents\NetBeansProjects\BankManagement\build\junitvmwatcher8239798483507658069.properties propsfile=C:\Users\admin\Documents\NetBeansProjects\BankManagement\build\junit2420722327531639853.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner utilities.CalculateInterestTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\admin\Documents\NetBeansProjects\BankManagement\build\test\results\TEST-utilities.CalculateInterestTest.xml crashfile=C:\Users\admin\Documents\NetBeansProjects\BankManagement\build\junitvmwatcher4165250032515387991.properties propsfile=C:\Users\admin\Documents\NetBeansProjects\BankManagement\build\junit1137336473490252548.properties" />
     <property name="build.classes.dir" value="build/web/WEB-INF/classes" />
     <property name="ap.supported.internal" value="true" />
     <property name="libs.javaee-api-8.0.maven-pom" value="" />
@@ -414,10 +414,10 @@
     <property name="war.ear.name" value="BankManagement.war" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files (x86)\NetBeans-17\netbeans\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="utilities.CalculateInterestTest" name="testcase1" time="3.838" />
-  <testcase classname="utilities.CalculateInterestTest" name="testcase2" time="0.008" />
-  <testcase classname="utilities.CalculateInterestTest" name="testcase3" time="0.009" />
-  <testcase classname="utilities.CalculateInterestTest" name="getLaiHienTaiCuaSoTietKiem" time="0.134" />
+  <testcase classname="utilities.CalculateInterestTest" name="testcase1" time="1.635" />
+  <testcase classname="utilities.CalculateInterestTest" name="testcase2" time="0.005" />
+  <testcase classname="utilities.CalculateInterestTest" name="testcase3" time="0.007" />
+  <testcase classname="utilities.CalculateInterestTest" name="getLaiHienTaiCuaSoTietKiem" time="0.029" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
 ]]></system-err>

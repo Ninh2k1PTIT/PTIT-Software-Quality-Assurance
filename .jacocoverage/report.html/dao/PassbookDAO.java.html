@@ -37,31 +37,31 @@ public class PassbookDAO extends DAO {
 <span class="fc" id="L37">            ps.setLong(1, passbook.getAccount().getAccountId());</span>
 <span class="fc" id="L38">            ResultSet rs = ps.executeQuery();</span>
 <span class="pc bpc" id="L39" title="1 of 2 branches missed.">            if (rs.next()) {</span>
-<span class="nc" id="L40">                long balance = rs.getLong(&quot;balance&quot;);</span>
-<span class="nc bnc" id="L41" title="All 2 branches missed.">                if (balance &lt; passbook.getAmount()) {</span>
-<span class="nc" id="L42">                    return false;</span>
+<span class="fc" id="L40">                long balance = rs.getLong(&quot;balance&quot;);</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">                if (balance &lt; passbook.getAmount()) {</span>
+<span class="fc" id="L42">                    return false;</span>
                 }
-<span class="nc" id="L44">                ps = con.prepareStatement(SELECT_STARTDATE_AND_ENDDATE_SQL);</span>
-<span class="nc" id="L45">                ps.setLong(1, passbook.getPeriod().getMonth() * 30);</span>
-<span class="nc" id="L46">                rs = ps.executeQuery();</span>
-<span class="nc bnc" id="L47" title="All 2 branches missed.">                if (rs.next()) {</span>
-<span class="nc" id="L48">                    Date startDate = rs.getDate(&quot;startDate&quot;);</span>
-<span class="nc" id="L49">                    Date endDate = rs.getDate(&quot;endDate&quot;);</span>
-<span class="nc" id="L50">                    ps = con.prepareStatement(CREATE_PASS_BOOK_SQL);</span>
-<span class="nc" id="L51">                    ps.setLong(1, passbook.getAccount().getAccountId());</span>
-<span class="nc" id="L52">                    ps.setLong(2, passbook.getPeriod().getPeriodId());</span>
-<span class="nc" id="L53">                    ps.setDate(3, startDate);</span>
-<span class="nc" id="L54">                    ps.setDate(4, endDate);</span>
-<span class="nc" id="L55">                    ps.setLong(5, passbook.getAmount());</span>
-<span class="nc" id="L56">                    ps.executeUpdate();</span>
-<span class="nc" id="L57">                    AccountDAO accountDAO = new AccountDAO();</span>
-<span class="nc" id="L58">                    accountDAO.depositeIntoAccount(passbook.getAccount().getAccountId(), -passbook.getAmount());</span>
-<span class="nc" id="L59">                } else {</span>
+<span class="fc" id="L44">                ps = con.prepareStatement(SELECT_STARTDATE_AND_ENDDATE_SQL);</span>
+<span class="fc" id="L45">                ps.setLong(1, passbook.getPeriod().getMonth() * 30);</span>
+<span class="fc" id="L46">                rs = ps.executeQuery();</span>
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">                if (rs.next()) {</span>
+<span class="fc" id="L48">                    Date startDate = rs.getDate(&quot;startDate&quot;);</span>
+<span class="fc" id="L49">                    Date endDate = rs.getDate(&quot;endDate&quot;);</span>
+<span class="fc" id="L50">                    ps = con.prepareStatement(CREATE_PASS_BOOK_SQL);</span>
+<span class="fc" id="L51">                    ps.setLong(1, passbook.getAccount().getAccountId());</span>
+<span class="fc" id="L52">                    ps.setLong(2, passbook.getPeriod().getPeriodId());</span>
+<span class="fc" id="L53">                    ps.setDate(3, startDate);</span>
+<span class="fc" id="L54">                    ps.setDate(4, endDate);</span>
+<span class="fc" id="L55">                    ps.setLong(5, passbook.getAmount());</span>
+<span class="fc" id="L56">                    ps.executeUpdate();</span>
+<span class="fc" id="L57">                    AccountDAO accountDAO = new AccountDAO();</span>
+<span class="fc" id="L58">                    accountDAO.depositeIntoAccount(passbook.getAccount().getAccountId(), -passbook.getAmount());</span>
+<span class="fc" id="L59">                } else {</span>
 <span class="nc" id="L60">                    return false;</span>
                 }
             }
-<span class="nc" id="L63">        } catch (SQLException e) {</span>
-<span class="nc" id="L64">            return false;</span>
+<span class="fc" id="L63">        } catch (SQLException e) {</span>
+<span class="fc" id="L64">            return false;</span>
 <span class="fc" id="L65">        }</span>
 <span class="fc" id="L66">        return true;</span>
     }
@@ -72,19 +72,19 @@ public class PassbookDAO extends DAO {
 <span class="fc" id="L72">            PreparedStatement ps = con.prepareStatement(SELECT_PASSBOOKS_OF_ACCOUNT_SQL);</span>
 <span class="fc" id="L73">            ps.setLong(1, accountId);</span>
 <span class="fc" id="L74">            ResultSet rs = ps.executeQuery();</span>
-<span class="pc bpc" id="L75" title="1 of 2 branches missed.">            while (rs.next()) {</span>
-<span class="nc" id="L76">                Passbook passbook = new Passbook();</span>
-<span class="nc" id="L77">                passbook.setPassbookId(rs.getLong(&quot;passbookId&quot;));</span>
-<span class="nc" id="L78">                passbook.setStartDate(rs.getDate(&quot;startDate&quot;));</span>
-<span class="nc" id="L79">                passbook.setEndDate(rs.getDate(&quot;endDate&quot;));</span>
-<span class="nc" id="L80">                passbook.setAmount(rs.getLong(&quot;amount&quot;));</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">            while (rs.next()) {</span>
+<span class="fc" id="L76">                Passbook passbook = new Passbook();</span>
+<span class="fc" id="L77">                passbook.setPassbookId(rs.getLong(&quot;passbookId&quot;));</span>
+<span class="fc" id="L78">                passbook.setStartDate(rs.getDate(&quot;startDate&quot;));</span>
+<span class="fc" id="L79">                passbook.setEndDate(rs.getDate(&quot;endDate&quot;));</span>
+<span class="fc" id="L80">                passbook.setAmount(rs.getLong(&quot;amount&quot;));</span>
 
-<span class="nc" id="L82">                Period period = new Period();</span>
-<span class="nc" id="L83">                period.setMonth(rs.getLong(&quot;month&quot;));</span>
-<span class="nc" id="L84">                period.setInterestRate(rs.getDouble(&quot;interestRate&quot;));</span>
-<span class="nc" id="L85">                passbook.setPeriod(period);</span>
-<span class="nc" id="L86">                result.add(passbook);</span>
-<span class="nc" id="L87">            }</span>
+<span class="fc" id="L82">                Period period = new Period();</span>
+<span class="fc" id="L83">                period.setMonth(rs.getLong(&quot;month&quot;));</span>
+<span class="fc" id="L84">                period.setInterestRate(rs.getDouble(&quot;interestRate&quot;));</span>
+<span class="fc" id="L85">                passbook.setPeriod(period);</span>
+<span class="fc" id="L86">                result.add(passbook);</span>
+<span class="fc" id="L87">            }</span>
 <span class="nc" id="L88">        } catch (SQLException e) {</span>
 <span class="fc" id="L89">        }</span>
 <span class="fc" id="L90">        return result;</span>
@@ -122,17 +122,17 @@ public class PassbookDAO extends DAO {
     }
 
     public boolean settlementPassbook(long id) {
-<span class="nc" id="L125">        Passbook passbook = getPassbookById(id);</span>
-<span class="nc" id="L126">        AccountDAO accountDAO = new AccountDAO();</span>
+<span class="fc" id="L125">        Passbook passbook = getPassbookById(id);</span>
+<span class="fc" id="L126">        AccountDAO accountDAO = new AccountDAO();</span>
         try {
-<span class="nc" id="L128">            PreparedStatement ps = con.prepareStatement(UPDATE_SETTLEMENT_SQL);</span>
-<span class="nc" id="L129">            ps.setLong(1, id);</span>
-<span class="nc" id="L130">            ps.executeUpdate();</span>
+<span class="fc" id="L128">            PreparedStatement ps = con.prepareStatement(UPDATE_SETTLEMENT_SQL);</span>
+<span class="fc" id="L129">            ps.setLong(1, id);</span>
+<span class="fc" id="L130">            ps.executeUpdate();</span>
 <span class="nc" id="L131">        } catch (Exception e) {</span>
 <span class="nc" id="L132">            return false;</span>
-<span class="nc" id="L133">        }</span>
-<span class="nc" id="L134">        accountDAO.depositeIntoAccount(passbook.getAccount().getAccountId(), CalculateInterest.getLaiHienTaiCuaSoTietKiem(passbook) + passbook.getAmount());</span>
-<span class="nc" id="L135">        return true;</span>
+<span class="fc" id="L133">        }</span>
+<span class="fc" id="L134">        accountDAO.depositeIntoAccount(passbook.getAccount().getAccountId(), CalculateInterest.getLaiHienTaiCuaSoTietKiem(passbook) + passbook.getAmount());</span>
+<span class="fc" id="L135">        return true;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
