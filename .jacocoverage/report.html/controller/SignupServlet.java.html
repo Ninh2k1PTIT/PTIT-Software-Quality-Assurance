@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SignupServlet.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;BankManagement&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">controller</a> &gt; <span class="el_source">SignupServlet.java</span></div><h1>SignupServlet.java</h1><pre class="source lang-java linenums">package controller;
+
+import dao.AccountDAO;
+import java.io.IOException;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import model.Account;
+
+@WebServlet(name = &quot;SignupServlet&quot;, urlPatterns = {&quot;/signup&quot;})
+<span class="nc" id="L14">public class SignupServlet extends HttpServlet {</span>
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+<span class="nc" id="L19">        String username = request.getParameter(&quot;username&quot;);</span>
+<span class="nc" id="L20">        String password = request.getParameter(&quot;password&quot;);</span>
+<span class="nc" id="L21">        String rePassword = request.getParameter(&quot;rePassword&quot;);</span>
+<span class="nc" id="L22">        String error = &quot;&quot;;</span>
+
+<span class="nc" id="L24">        AccountDAO accountDAO = new AccountDAO();</span>
+<span class="nc" id="L25">        Account account = new Account(username, password);</span>
+<span class="nc bnc" id="L26" title="All 2 branches missed.">        if (!password.equals(rePassword)) {</span>
+<span class="nc" id="L27">            error = &quot;Xác khẩu mật khẩu chưa trùng khớp&quot;;</span>
+<span class="nc" id="L28">            request.setAttribute(&quot;error&quot;, error);</span>
+<span class="nc" id="L29">            request.setAttribute(&quot;username&quot;, username);</span>
+<span class="nc" id="L30">            RequestDispatcher rd = getServletContext().getRequestDispatcher(&quot;/signup.jsp&quot;);</span>
+<span class="nc" id="L31">            rd.forward(request, response);</span>
+<span class="nc bnc" id="L32" title="All 2 branches missed.">        } else if (!accountDAO.signup(account)) {</span>
+<span class="nc" id="L33">            error = &quot;Username đã tồn tại&quot;;</span>
+<span class="nc" id="L34">            request.setAttribute(&quot;error&quot;, error);</span>
+<span class="nc" id="L35">            RequestDispatcher rd = getServletContext().getRequestDispatcher(&quot;/signup.jsp&quot;);</span>
+<span class="nc" id="L36">            rd.forward(request, response);</span>
+<span class="nc" id="L37">        } else {</span>
+<span class="nc" id="L38">            request.getSession().setAttribute(&quot;signupSuccess&quot;, true);</span>
+<span class="nc" id="L39">            response.sendRedirect(request.getContextPath() + &quot;/login.jsp&quot;);</span>
+        }
+
+<span class="nc" id="L42">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

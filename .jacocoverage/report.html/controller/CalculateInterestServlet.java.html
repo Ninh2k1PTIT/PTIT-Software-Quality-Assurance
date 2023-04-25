@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CalculateInterestServlet.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;BankManagement&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">controller</a> &gt; <span class="el_source">CalculateInterestServlet.java</span></div><h1>CalculateInterestServlet.java</h1><pre class="source lang-java linenums">package controller;
+
+import com.google.gson.Gson;
+import dao.PeriodDAO;
+import java.io.IOException;
+import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import model.Period;
+import utilities.CalculateInterest;
+
+@WebServlet(name = &quot;CalculateInterestServlet&quot;, urlPatterns = {&quot;/calculate-interest&quot;})
+<span class="nc" id="L17">public class CalculateInterestServlet extends HttpServlet {</span>
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+<span class="nc" id="L22">        PeriodDAO periodDAO = new PeriodDAO();</span>
+<span class="nc" id="L23">        ArrayList list = periodDAO.getAll();</span>
+<span class="nc" id="L24">        request.setAttribute(&quot;listPeriod&quot;, list);</span>
+<span class="nc" id="L25">        RequestDispatcher rd = getServletContext().getRequestDispatcher(&quot;/calculate-interest.jsp&quot;);</span>
+<span class="nc" id="L26">        rd.forward(request, response);</span>
+<span class="nc" id="L27">    }</span>
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+<span class="nc" id="L32">        long day = Long.parseLong(request.getParameter(&quot;day&quot;));</span>
+<span class="nc" id="L33">        long amount = Long.parseLong(request.getParameter(&quot;amount&quot;));</span>
+<span class="nc" id="L34">        System.out.println(request.getParameter(&quot;period&quot;));</span>
+<span class="nc" id="L35">        Gson g = new Gson();</span>
+<span class="nc" id="L36">        Period period = g.fromJson(request.getParameter(&quot;period&quot;), Period.class);</span>
+<span class="nc" id="L37">        request.setAttribute(&quot;day&quot;, day);</span>
+<span class="nc" id="L38">        request.setAttribute(&quot;amount&quot;, amount);</span>
+<span class="nc" id="L39">        request.setAttribute(&quot;period&quot;, period);</span>
+<span class="nc" id="L40">        request.setAttribute(&quot;endInterest&quot;, CalculateInterest.getLai(period, amount, period.getMonth() * 30));</span>
+<span class="nc" id="L41">        request.setAttribute(&quot;currentInterest&quot;, CalculateInterest.getLai(period, amount, day));</span>
+<span class="nc" id="L42">        doGet(request, response);</span>
+<span class="nc" id="L43">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

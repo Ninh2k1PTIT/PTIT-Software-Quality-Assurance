@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CreatePassbookServlet.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;BankManagement&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">controller</a> &gt; <span class="el_source">CreatePassbookServlet.java</span></div><h1>CreatePassbookServlet.java</h1><pre class="source lang-java linenums">package controller;
+
+import com.google.gson.Gson;
+import dao.AccountDAO;
+import dao.PassbookDAO;
+import dao.PeriodDAO;
+import java.io.IOException;
+import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import model.Account;
+import model.Passbook;
+import model.Period;
+
+@WebServlet(name = &quot;CreatePassbookServlet&quot;, urlPatterns = {&quot;/passbook-create&quot;})
+<span class="nc" id="L21">public class CreatePassbookServlet extends HttpServlet {</span>
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+<span class="nc" id="L26">        PeriodDAO periodDAO = new PeriodDAO();</span>
+<span class="nc" id="L27">        Cookie accountIdCookie = null;</span>
+<span class="nc" id="L28">        Cookie[] cookies = request.getCookies();</span>
+<span class="nc bnc" id="L29" title="All 2 branches missed.">        if (cookies != null) {</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">            for (Cookie cookie : cookies) {</span>
+<span class="nc bnc" id="L31" title="All 2 branches missed.">                if (cookie.getName().equals(&quot;id&quot;)) {</span>
+<span class="nc" id="L32">                    accountIdCookie = cookie;</span>
+                }
+            }
+        }
+<span class="nc bnc" id="L36" title="All 2 branches missed.">        if (accountIdCookie != null) {</span>
+<span class="nc" id="L37">            AccountDAO accountDAO = new AccountDAO();</span>
+<span class="nc" id="L38">            Account account = accountDAO.getAccountById(Long.parseLong(accountIdCookie.getValue()));</span>
+<span class="nc" id="L39">            request.setAttribute(&quot;balance&quot;, account.getBalance());</span>
+        }
+<span class="nc" id="L41">        ArrayList list = periodDAO.getAll();</span>
+<span class="nc" id="L42">        request.setAttribute(&quot;listPeriod&quot;, list);</span>
+<span class="nc" id="L43">        RequestDispatcher rd = getServletContext().getRequestDispatcher(&quot;/passbook-create.jsp&quot;);</span>
+<span class="nc" id="L44">        rd.forward(request, response);</span>
+<span class="nc" id="L45">    }</span>
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+<span class="nc" id="L50">        Passbook passbook = new Passbook();</span>
+<span class="nc" id="L51">        Account account = new Account();</span>
+        //Set period
+<span class="nc" id="L53">        Gson g = new Gson();</span>
+<span class="nc" id="L54">        Period period = g.fromJson(request.getParameter(&quot;period&quot;), Period.class);</span>
+
+        //Set account
+<span class="nc" id="L57">        Cookie accountIdCookie = null;</span>
+<span class="nc" id="L58">        Cookie[] cookies = request.getCookies();</span>
+<span class="nc bnc" id="L59" title="All 2 branches missed.">        if (cookies != null) {</span>
+<span class="nc bnc" id="L60" title="All 2 branches missed.">            for (Cookie cookie : cookies) {</span>
+<span class="nc bnc" id="L61" title="All 2 branches missed.">                if (cookie.getName().equals(&quot;id&quot;)) {</span>
+<span class="nc" id="L62">                    accountIdCookie = cookie;</span>
+                }
+            }
+        }
+<span class="nc bnc" id="L66" title="All 2 branches missed.">        if (accountIdCookie != null) {</span>
+<span class="nc" id="L67">            account.setAccountId(Long.parseLong(accountIdCookie.getValue()));</span>
+        }
+
+<span class="nc" id="L70">        passbook.setAccount(account);</span>
+<span class="nc" id="L71">        passbook.setPeriod(period);</span>
+<span class="nc" id="L72">        passbook.setAmount(Long.parseLong(request.getParameter(&quot;amount&quot;)));</span>
+
+<span class="nc" id="L74">        PassbookDAO passbookDAO = new PassbookDAO();</span>
+<span class="nc bnc" id="L75" title="All 2 branches missed.">        if (passbookDAO.create(passbook)) {</span>
+<span class="nc" id="L76">            request.getSession().setAttribute(&quot;createPassbookSuccess&quot;, true);</span>
+<span class="nc" id="L77">            response.sendRedirect(request.getContextPath() + &quot;/passbooks&quot;);</span>
+        } else {
+<span class="nc" id="L79">            request.setAttribute(&quot;error&quot;, &quot;Số dư không đủ&quot;);</span>
+<span class="nc" id="L80">            doGet(request, response);</span>
+        }
+<span class="nc" id="L82">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
